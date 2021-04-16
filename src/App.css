@@ -1,38 +1,112 @@
-.App {
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+#canvaselement {
+  position: absolute;
+  top: -86;
+  left: 50;
+  border-radius: 100%;
+}
+.container {
+  background-color: #3e3c3f;
+  width: 400px;
   text-align: center;
+  padding: 15px;
+  border-radius: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image-container {
+  position: relative;
+  display: flex;
+  height: 340px;
+  justify-content: center;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.img {
+  padding-right: 5px;
+  width: 175px;
+  height: 175px;
+  border-radius: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
+.input {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  appearance: none;
+  height: 1px;
+}
+.input:focus {
+  outline: none;
+}
+.input::-webkit-slider-thumb {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+.root {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #152129;
+}
+.song-info h1 {
+  font-size: 3rem;
+  color: #fff;
+  font-family: "Nerko One", cursive;
+  margin: 0;
+}
+.song-info p {
+  color: #ddd;
+
+  font-family: sans-serif;
+}
+.controler {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 500px) {
+  .img,
+  #canvaselement {
+    width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    height: 200px;
+  }
+  .image-container{
+    height: 250px;
+  }
+  .container {
+    background: none;
+  }
+  .song-info h1 {
+    font-size: 3rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
+.animation-spin {
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
